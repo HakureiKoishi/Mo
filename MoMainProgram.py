@@ -1,10 +1,10 @@
+import time
+import os
+from playsound import playsound
+from dearpygui.core import *
+from dearpygui.simple import *
+from multiprocessing import Process
 def MoMainProgram():
-    import time
-    import os
-    from playsound import playsound
-    from dearpygui.core import *
-    from dearpygui.simple import *
-    from multiprocessing import Process
     print("MainProgram Active")
     #---------------------------------------------------其他定义函数---------------------------------------------------
     def MusicPlayer(MusicName,MusicFile):
