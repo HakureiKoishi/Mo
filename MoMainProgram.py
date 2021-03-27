@@ -55,6 +55,6 @@ def MoMainProgram():
             for item in process_list:
                 item.join()
         except:
-            print("多线程错误")
+            pass
 
     start_process()
