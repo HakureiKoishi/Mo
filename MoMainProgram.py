@@ -1,5 +1,8 @@
 def MoMainProgram():
     import time
+    import os
+    from dearpygui.core import *
+    from dearpygui.simple import *
     print("MainProgram Active")
     def apply_text_multiplier(sender, data):
         font_multiplier = get_value("Font Size Multiplier")
