@@ -1,10 +1,27 @@
 def MoMainProgram():
     import time
     print("MainProgram Active")
-    time.sleep(0.5)
-    a = 5
-    for i in range(5,0,-1):
-        print(str(a)+"秒后关闭")
-        a -=1
-        time.sleep(1)
+    def apply_text_multiplier(sender, data):
+        font_multiplier = get_value("Font Size Multiplier")
+        set_global_font_scale(font_multiplier)
+
+
+    def apply_theme(sender, data):
+        theme = get_value("Themes")
+        set_theme(theme)
+
+    add_window("主题")
+    themes = ["Dark", "Light", "Classic", "Dark 2", "Grey", "Dark Grey", "Cherry", "Purple", "Gold", "Red"]
+    add_combo("Themes", items=themes, default_value="Dark", callback=apply_theme)
+
+    add_slider_float("Font Size Multiplier", default_value=1.0, min_value=0.0, max_value=2.0,
+                     callback=apply_text_multiplier)
+    end()
+
+    add_window("貘")
+    file = open(r'C:\ProgramData\Version-Mo\Mocheckver.txt')
+    checkver=file.read()
+    add_text(checkver)
+    os.system(r'C:\Users\Public\Music\RickRoll.mp3')
+    start_dearpygui()
     input("按任意键退出")
